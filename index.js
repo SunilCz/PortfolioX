@@ -3,3 +3,8 @@ document.addEventListener("contextmenu", function(event){
 event.preventDefault();
 alert('Right Click is Disabled');    
 }, false);
+function scrollToContact() {
+    var contactSection = document.getElementById('section-contact');
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+  
