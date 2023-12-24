@@ -17,3 +17,7 @@ let curtainRaise = function (e) {
 }
 
 document.querySelectorAll(".site-pages a").forEach(element => element.addEventListener("click", curtainRaise));
+
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
