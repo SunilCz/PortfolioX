@@ -1,70 +1,116 @@
-.article-1{
-    padding-bottom: 60px;
+#background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+  }
+  
+  .article-1 {
+    z-index: 1;
     position: relative;
+    padding-bottom: 60px;
     padding-left: 0px !important;
-}
-
-.article-1>div:nth-child(1),
-.article-1>div:nth-child(2) {
+  }
+  
+  .article-1>div:nth-child(1),
+  .article-1>div:nth-child(2) {
     padding-left: var(--page-padding-left);
-}
-
-.first-text p{
-    margin:0;
+  }
+  
+  .first-text {
+    position: relative;
+    width: fit-content;
+  }
+  
+  .first-text p {
+    margin: 0;
     padding: 0;
-}
-
-.salutation{
+  }
+  
+  .salutation {
     font-size: var(--title-size);
     font-weight: bold;
     line-height: 70px;
     min-width: 600px;
-}
-.first-text span{
+  }
+  
+  .first-text span {
     transition: color 0.4s;
-}
-
-.first-text span:hover{
+    position: relative;
+  }
+  
+  .first-text span:hover {
     color: var(--main-blue-color);
-}
-
-.first-text svg{
+  }
+  
+  .first-text svg {
     width: 55px;
     opacity: 0;
     animation-duration: 0.5s;
-    animation-delay: .9s;
+    animation-delay: 0.9s;
     animation-name: sunil-rotate;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-}
-
-.profession{
-    color:#8d8d8d;
+  }
+  
+  .profession {
+    color: #8d8d8d;
     letter-spacing: 4px;
-}
-
-@keyframes sunil-rotate {
-    from{
+    z-index: -1; /* Ensure it's below other elements */
+  }
+  
+  @keyframes sunil-rotate {
+    from {
         opacity: 0;
         transform: rotate(-360deg);
     }
-    to{
+    to {
         opacity: 1;
         transform: none;
     }
-}
-
-
-.salutation svg {
-    display: inline-block; /* Make the SVG an inline-block element */
-    vertical-align: middle; /* Align the SVG vertically with the text */
-    margin-right: -15px; /* Adjust the margin between the image and the text */
-}
-
-.salutation .image-span {
-    margin-right: 0; /* Reset the margin for the specific span containing the image */
-}
-
-.salutation .u-span {
-    margin-right: 0; /* Adjust the margin between the image and "u" */
-}
+  }
+  
+  .salutation svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -15px;
+  }
+  
+  .salutation .image-span {
+    margin-right: 0;
+  }
+  
+  .salutation .u-span {
+    margin-right: 0;
+  }
+  
+  .bouncer>span {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity ease 0.5s !important;
+    position: relative;
+  }
+  
+  .letter-hidden {
+    opacity: 0 !important;
+  }
+  
+  .let-bounce {
+    animation: bounce 1s ease-out;
+  }
+  
+  @keyframes bounce {
+    20%, 50%, 80%, to {
+        transform: scaleX(1) scaleY(1);
+    }
+    40% {
+        transform: scaleX(1.75) scaleY(0.65);
+    }
+    70% {
+        transform: scaleX(1.25) scaleY(0.75);
+    }
+    90% {
+        transform: scaleX(1.15) scaleY(0.85);
+    }
+  }
+  
