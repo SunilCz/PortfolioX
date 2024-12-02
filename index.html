@@ -30,10 +30,20 @@
         <link rel="stylesheet" href="css/article-3.css">
         <link rel="stylesheet" href="css/article-4.css">
         <link rel="stylesheet" href="css/article-5.css">
+         <style>
+       
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+    </style>
 
     </head>
 
     <body>
+         <canvas id="canvas"></canvas>
         <div class="root-curtain">
             <div class="sunil-section">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 442">
@@ -444,6 +454,7 @@
                 </div>
             </div>
         </main>
+        <script src="javascript/canvas-cursor.js"></script>
         <script src="javascript/bouncer.js"></script>
         <script src="javascript/menu-button.js"></script>
         <script src="javascript/scroll-appearance.js"></script>
