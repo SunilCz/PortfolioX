@@ -49,8 +49,10 @@ body {
 
 body .scene {
   perspective: 2600px;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
+  max-width: 500px;
+  max-height: 500px;
 }
 
 body .scene_titanShadow {
@@ -1641,8 +1643,96 @@ body .scene_saturn__ring .layer_part:nth-of-type(50) {
   }
 }
 h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    color: rgb(124, 96, 200);
-    text-align: center;
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: bold;
+  color: rgb(124, 96, 200);
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body .scene {
+    width: min(400px, 85vw);
+    height: min(400px, 85vw);
   }
+
+  body .scene_titan {
+    width: 67px;
+    height: 67px;
+    border-radius: 33.5px;
+  }
+
+  body .scene_saturn {
+    width: 122px;
+    height: 122px;
+    border-radius: 61px;
+  }
+
+  body .scene_saturn__face {
+    width: 122px;
+    height: 122px;
+    border-radius: 61px;
+  }
+
+  body .scene_saturn__shadow {
+    width: 122px;
+    height: 30px;
+  }
+
+  body .scene_saturn__shadowRing {
+    width: 264px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body .scene {
+    width: min(300px, 80vw);
+    height: min(300px, 80vw);
+  }
+
+  body .scene_titan {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
+
+  body .scene_saturn {
+    width: 91px;
+    height: 91px;
+    border-radius: 45.5px;
+  }
+
+  body .scene_saturn__face {
+    width: 91px;
+    height: 91px;
+    border-radius: 45.5px;
+  }
+
+  body .scene_saturn__shadow {
+    width: 91px;
+    height: 23px;
+  }
+
+  body .scene_saturn__shadowRing {
+    width: 198px;
+    height: 11px;
+  }
+
+  body .scene_saturn__face .face_clip .eye,
+  body .scene_titan .eyes .eye {
+    width: 4px;
+    height: 4px;
+  }
+
+  body .scene_saturn__face .face_clip .eye--left.eye,
+  body .scene_titan .eyes .eye--left.eye {
+    left: -60px;
+  }
+
+  body .scene_saturn__face .face_clip .eye--right.eye,
+  body .scene_titan .eyes .eye--right.eye {
+    left: 60px;
+  }
+}

@@ -1,116 +1,169 @@
 #background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-  }
-  
-  .article-1 {
-    z-index: 1;
-    position: relative;
-    padding-bottom: 60px;
-    padding-left: 0px !important;
-  }
-  
-  .article-1>div:nth-child(1),
-  .article-1>div:nth-child(2) {
-    padding-left: var(--page-padding-left);
-  }
-  
-  .first-text {
-    position: relative;
-    width: fit-content;
-  }
-  
-  .first-text p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .salutation {
-    font-size: var(--title-size);
-    font-weight: bold;
-    line-height: 70px;
-    min-width: 600px;
-  }
-  
-  .first-text span {
-    transition: color 0.4s;
-    position: relative;
-  }
-  
-  .first-text span:hover {
-    color: var(--main-blue-color);
-  }
-  
-  .first-text svg {
-    width: 55px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.article-1 {
+  z-index: 1;
+  position: relative;
+  padding-bottom: 60px;
+  padding-left: 0px !important;
+}
+
+.article-1 > div:nth-child(1),
+.article-1 > div:nth-child(2) {
+  padding-left: var(--page-padding-left);
+}
+
+.first-text {
+  position: relative;
+  width: fit-content;
+}
+
+.first-text p {
+  margin: 0;
+  padding: 0;
+}
+
+.salutation {
+  font-size: clamp(3rem, 8vw, var(--title-size));
+  font-weight: bold;
+  line-height: clamp(3rem, 8vw, 70px);
+  min-width: min(600px, 90vw);
+}
+
+.first-text span {
+  transition: color 0.4s;
+  position: relative;
+}
+
+.first-text span:hover {
+  color: var(--main-blue-color);
+}
+
+.first-text svg {
+  width: clamp(35px, 6vw, 55px);
+  height: clamp(35px, 6vw, 55px);
+  opacity: 0;
+  animation-duration: 0.5s;
+  animation-delay: 0.9s;
+  animation-name: sunil-rotate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.profession {
+  color: #8d8d8d;
+  letter-spacing: 4px;
+  z-index: -1; /* Ensure it's below other elements */
+}
+
+@keyframes sunil-rotate {
+  from {
     opacity: 0;
-    animation-duration: 0.5s;
-    animation-delay: 0.9s;
-    animation-name: sunil-rotate;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    transform: rotate(-360deg);
   }
-  
-  .profession {
-    color: #8d8d8d;
-    letter-spacing: 4px;
-    z-index: -1; /* Ensure it's below other elements */
-  }
-  
-  @keyframes sunil-rotate {
-    from {
-        opacity: 0;
-        transform: rotate(-360deg);
-    }
-    to {
-        opacity: 1;
-        transform: none;
-    }
-  }
-  
-  .salutation svg {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: -15px;
-  }
-  
-  .salutation .image-span {
-    margin-right: 0;
-  }
-  
-  .salutation .u-span {
-    margin-right: 0;
-  }
-  
-  .bouncer>span {
-    display: inline-block;
+  to {
     opacity: 1;
-    transition: opacity ease 0.5s !important;
-    position: relative;
+    transform: none;
   }
-  
-  .letter-hidden {
-    opacity: 0 !important;
+}
+
+.salutation svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -15px;
+}
+
+.salutation .image-span {
+  margin-right: 0;
+}
+
+.salutation .u-span {
+  margin-right: 0;
+}
+
+.bouncer > span {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity ease 0.5s !important;
+  position: relative;
+}
+
+.letter-hidden {
+  opacity: 0 !important;
+}
+
+.let-bounce {
+  animation: bounce 1s ease-out;
+}
+
+@keyframes bounce {
+  20%,
+  50%,
+  80%,
+  to {
+    transform: scaleX(1) scaleY(1);
   }
-  
-  .let-bounce {
-    animation: bounce 1s ease-out;
+  40% {
+    transform: scaleX(1.75) scaleY(0.65);
   }
-  
-  @keyframes bounce {
-    20%, 50%, 80%, to {
-        transform: scaleX(1) scaleY(1);
-    }
-    40% {
-        transform: scaleX(1.75) scaleY(0.65);
-    }
-    70% {
-        transform: scaleX(1.25) scaleY(0.75);
-    }
-    90% {
-        transform: scaleX(1.15) scaleY(0.85);
-    }
+  70% {
+    transform: scaleX(1.25) scaleY(0.75);
   }
-  
+  90% {
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+}
+
+/* Responsive adjustments for article-1 */
+@media screen and (max-width: 768px) {
+  .salutation {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    line-height: clamp(2.5rem, 7vw, 4rem);
+    min-width: min(400px, 85vw);
+  }
+
+  .first-text svg {
+    width: clamp(30px, 5vw, 45px);
+    height: clamp(30px, 5vw, 45px);
+  }
+
+  .profession {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    letter-spacing: 2px;
+  }
+
+  .article-1 {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .salutation {
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: clamp(2rem, 6vw, 3rem);
+    min-width: min(300px, 80vw);
+  }
+
+  .first-text svg {
+    width: clamp(25px, 4vw, 35px);
+    height: clamp(25px, 4vw, 35px);
+  }
+
+  .profession {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    letter-spacing: 1px;
+  }
+
+  .article-1 {
+    padding-bottom: 30px;
+  }
+
+  .first-text {
+    width: 100%;
+    text-align: center;
+  }
+}
