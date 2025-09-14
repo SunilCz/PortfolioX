@@ -1,3 +1,31 @@
+
+#maintenance-ticker {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: #ffcc00;
+    color: #222;
+    padding: 2px 0;
+    font-weight: bold;
+    font-family: sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 13px;
+    overflow: hidden;
+    height: 24px;
+}
+
+#maintenance-ticker .maintenance-ticker-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: slide-ticker 18s linear infinite;
+}
+
+@keyframes slide-ticker {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+}
 :root{
     --tags-color : #515152;
     --input-color: #8d8d8d;
